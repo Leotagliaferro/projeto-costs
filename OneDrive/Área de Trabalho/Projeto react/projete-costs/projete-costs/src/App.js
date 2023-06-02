@@ -3,24 +3,23 @@ import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Company from './components/pages/Company';
 import Newproject from './components/pages/NewProject';
-
+import Navbar from './components/layout/Navbar';
 import Container from './components/layout/Container';
-
+import Footer from './components/layout/Footer';
+import Projects from './components/pages/Projects';
 
 
 
 function App() {
   return (
     <Router>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/Contact">Contato</Link>
-        <Link to="/Company">Empresa</Link>
-        <Link to="/Newproject">Novo projeto</Link>
-      </div>
+      <Navbar />
       <Container customClass="min-height">
         <Routes>
           <Route path="/" element={<Home />} > </Route>
+        </Routes>
+        <Routes>
+          <Route path="/Projects" element={<Projects />} > </Route>
         </Routes>
         <Routes>
           <Route path="/Company" element={<Company />} > </Route>
@@ -32,7 +31,7 @@ function App() {
           <Route path="/Newproject" element={<Newproject />} > </Route>
         </Routes>
         </Container>
-      <p>Footer</p>
+      <Footer/>
     </Router>
     
 
