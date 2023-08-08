@@ -3,10 +3,9 @@ import ProjectForm from '../project/ProjectForm';
 import styles from './NewProject.module.css';
 
 function NewProject() {
-  const history = useNavigate();
+  const history = useNavigate(); 
 
   function createPost(project) {
-    // initialize cost and services
     project.cost = 0;
     project.services = [];
 
@@ -20,7 +19,7 @@ function NewProject() {
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
-        history('/projects', { message: "Projeto criado com sucesso!" });
+        history('/projects', { state: { message: 'Projeto criado com sucesso!' } }); 
       })
       .catch(err => console.log(err));
   }
@@ -35,3 +34,4 @@ function NewProject() {
 }
 
 export default NewProject;
+
